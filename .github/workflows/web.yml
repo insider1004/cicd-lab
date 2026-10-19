@@ -25,10 +25,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: nginx 설정 검사
-        working-directory: ${{ env.APP }}
         run: |
           docker run --rm --add-host api:127.0.0.1 \
-            -v "$PWD/${{ env.APP }}/default.conf:/etc/nginx/conf.d/default.conf:ro" \
+            -v "$PWD/web/default.conf:/etc/nginx/conf.d/default.conf:ro" \
             nginx:1.29-alpine nginx -t
 
   scan:
