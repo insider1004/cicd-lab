@@ -22,8 +22,6 @@ env:
 jobs:
   test:
     runs-on: ubuntu-24.04
-    container:
-      image: nginx:1.29-alpine # 1. Nginx 환경에서 시작
     steps:
       - uses: actions/checkout@v7
       - name: nginx 설정 검사
